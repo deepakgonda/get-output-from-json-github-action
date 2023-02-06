@@ -9793,11 +9793,11 @@ try {
         let jsObj = parsedJson;
         for (prop of pathsArr) {
             jsObj = jsObj[prop];
-            console.log(`For Property: ${prop}, value:`, jsObj);
+            // console.log(`For Property: ${prop}, value:`, jsObj);
         }
         output = JSON.stringify(jsObj);
-        console.log('Final Output:', output);
     }
+    console.log('Final Output:', output);
     core.setOutput("property-value", output);
 
     // Get the JSON webhook payload for the event that triggered the workflow
