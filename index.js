@@ -3,10 +3,10 @@ const github = require('@actions/github');
 
 try {
     const propertyPath = core.getInput('property-path');
-    console.log(`Property Path: ${propertyPath}!`);
+    console.log(`Property Path: ${propertyPath}`);
 
     const jsonString = core.getInput('json-string');
-    console.log(`jsonString: ${jsonString}!`);
+    console.log(`jsonString: ${jsonString}`);
 
     let output;
     const parsedJson = JSON.parse(jsonString);
@@ -15,7 +15,7 @@ try {
     } else {
         pathsArr = propertyPath.split(".");
         let jsObj = parsedJson;
-        for (prop in pathsArr) {
+        for (prop of pathsArr) {
             jsObj = jsObj[prop];
             console.log(`For Property: ${prop}, value:`, jsObj);
         }
