@@ -1,0 +1,17 @@
+name: 'Get Output From JSON'
+description: 'Get JSON string, parse it and then output the property which was asked in input'
+inputs:
+  json-string:  # id of input
+    description: 'Json String'
+    required: true
+    default: '{}'
+  property-path:  # id of input
+    description: 'Path of the property which is needed as output'
+    required: true
+    default: '.'
+outputs:
+  property-value: # id of output
+    description: 'Value of the property which was asked in the input'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
